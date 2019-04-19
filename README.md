@@ -54,6 +54,7 @@ Stop containers all
 Create Branch
 
 `git branch _branch_name_`
+
 `git checkout _branch_name_`
 
 Shorthand for the above
@@ -63,6 +64,7 @@ Shorthand for the above
 When happy with changes, merge
 
 `git checkout master`
+
 `git merge _branch_name_`
 
 ### changing config
@@ -70,6 +72,7 @@ When happy with changes, merge
 Set global username and email
 
 `git config --global user.name "Marc Harriss"`
+
 `git config --global user.email my@email.com`
 
 Get config
@@ -81,6 +84,7 @@ Where to find git conf
 `sublime ~/.gitconfig`
 
 ### General
+
 `grep -lr '<<<<<<<' . | xargs git checkout --theirs`
 
 Copy ssh key
@@ -162,6 +166,7 @@ Or
 Add app bar space
 
 `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}’`
+
 `$Killall Dock`
 _repeat for each spacer_
 
@@ -203,15 +208,21 @@ Stop and kill any MySQL processes
 Analyze MySQL on HomeBrew:
 
 `brew remove mysql`
+
 `brew cleanup`
 
 Remove files:
 
 `sudo rm /usr/local/mysql`
+
 `sudo rm -rf /usr/local/var/mysql`
+
 `sudo rm -rf /usr/local/mysql*`
+
 `sudo rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist`
+
 `sudo rm -rf /Library/StartupItems/MySQLCOM`
+
 `sudo rm -rf /Library/PreferencePanes/My*`
 
 Unload previous MySQL Auto-Login:
@@ -226,10 +237,15 @@ _Remove the line MYSQLCOM=-YES-_
 Remove previous MySQL Preferences:
 
 `rm -rf ~/Library/PreferencePanes/My*`
+
 `sudo rm -rf /Library/Receipts/mysql*`
+
 `sudo rm -rf /Library/Receipts/MySQL*`
+
 `sudo rm -rf /private/var/db/receipts/*mysql*`
+
 `sudo rm -rf /etc/my.cnf`
+
 `sudo rm -rf /etc/mysql/`
 
 Reboot just to ensure any MySQL processes are killed
