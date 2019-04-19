@@ -8,14 +8,17 @@ If your often scouring through documentation or saving snippets, I would recomme
 ### Monitoring
 
 Monitor the end of a file
+
 `sudo tail -f /var/log/apache2/access.log`
 
 ### Scp
 
 Copying from remote to local
+
 `scp -vr user@remote:/path/to/file destination/folder`
 
 Inverse for local to remote
+
 `scp -vr /local/file user@remote:/path/to/destination`
 
 _scp may not work while using zsh, so you may need to switch to bash._
@@ -23,9 +26,11 @@ _scp may not work while using zsh, so you may need to switch to bash._
 ## Docker
 
 Build image (from directory where there is a dockerfile)
+
 `docker build -t __placeholder__ .`
 
 Create background container
+
 `docker run -dp 9200:9200 --name ES elasticsearch`
 
 _the "d" from -dp actually makes it run in the backfound_
@@ -35,9 +40,11 @@ Remove all images
 `docker rmi -f $(docker images -q)`
 
 Run commands inside container
+
 `docker run -it --rm __placeholder__ bash`
 
 Stop containers all
+
 `docker stop $(docker ps -q)`
 
 ## Git
@@ -45,46 +52,57 @@ Stop containers all
 ### Branching
 
 Create Branch
+
 `git branch _branch_name_`
 `git checkout _branch_name_`
 
 Shorthand for the above
+
 `git checkout -b _branch_name_`
 
 When happy with changes, merge
+
 `git checkout master`
 `git merge _branch_name_`
 
 ### changing config
 
 Set global username and email
+
 `git config --global user.name "Marc Harriss"`
 `git config --global user.email my@email.com`
 
 Get config
+
 `git config -l`
 
 Where to find git conf
+
 `sublime ~/.gitconfig`
 
 ### General
 `grep -lr '<<<<<<<' . | xargs git checkout --theirs`
 
 copy ssh key
+
 `cat ~/.ssh/id_rsa.pub | pbcopy .` _(mac)_
 
 fix host verification issue
+
 `ssh-keyscan -H __website.com__ >> ~/.ssh/known_hosts`
 
 ### Time-machine
 
 Remove folder once uploaded
+
 `git rm -r --cached node_modules && touch .gitignore && echo "node_modules/" >> .gitignore`
 
 Undo commits
+
 `git reset --soft HEAD^`
 
 reset to last commit
+
 `git reset --hard HEAD^`
 
 ## JavaScript
@@ -102,6 +120,7 @@ Object.keys(window).forEach(key => {
 ```
 
 Psuedo elements
+
 ```JavaScript
 var color = window.getComputedStyle(
 	document.querySelector('.element'), ':before'
@@ -123,20 +142,25 @@ _add alias in ~/.zshrc | ~/.bashrc whichever terminal you use_
 
 
 Add to top of ~/.zshrc | ~/.bash_profile
+
 `source /Users/YOUUSERNAME/.bash_profile`
 
 View all global packages
+
 `npm ls -g --depth 0`
 
 Shell autocomplete
+
 `npm completion >> ~/.bashrc`
 or
+
 `npm completion >> ~/.zshrc`
 
 
 ## MacOS
 
 Add app bar space
+
 `defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}’`
 `$Killall Dock`
 _repeat for each spacer_
@@ -150,6 +174,7 @@ if doesnt work then
 `sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache;say MacOS DNS cache has been cleared`
 
 Launching programs from the terminal.
+
 ```shell
 chrome () {
 	open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "$1"
@@ -163,6 +188,7 @@ code () {
 ```
 
 Watching files
+
 `sudo fs_usage | grep my.cnf`
 
 ### rm mysql Open the Terminal
@@ -170,15 +196,18 @@ Watching files
 Use mysqldump to backup your databases
 
 Check for MySQL processes
+
 `ps -ax | grep mysql`
 
 Stop and kill any MySQL processes
 
 Analyze MySQL on HomeBrew:
+
 `brew remove mysql`
 `brew cleanup`
 
 Remove files:
+
 `sudo rm /usr/local/mysql`
 `sudo rm -rf /usr/local/var/mysql`
 `sudo rm -rf /usr/local/mysql*`
@@ -187,9 +216,11 @@ Remove files:
 `sudo rm -rf /Library/PreferencePanes/My*`
 
 Unload previous MySQL Auto-Login:
+
 `launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist`
 
 Remove previous MySQL Configuration:
+
 `sublime /etc/hostconfig`
 
 _Remove the line MYSQLCOM=-YES-_
@@ -220,6 +251,7 @@ Check if apache2 active
 `mkdir -p /data/db`
 
 It's likely to encounter perm issues.
+
 `sudo chown -R "id -un" /data/db`
 
 ## Browser JS
