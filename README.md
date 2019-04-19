@@ -33,7 +33,7 @@ Create background container
 
 `docker run -dp 9200:9200 --name ES elasticsearch`
 
-_the "d" from -dp actually makes it run in the backfound_
+_The "d" from -dp actually makes it run in the backfound_
 
 Remove all images
 
@@ -83,11 +83,11 @@ Where to find git conf
 ### General
 `grep -lr '<<<<<<<' . | xargs git checkout --theirs`
 
-copy ssh key
+Copy ssh key
 
 `cat ~/.ssh/id_rsa.pub | pbcopy .` _(mac)_
 
-fix host verification issue
+Fix host verification issue
 
 `ssh-keyscan -H __website.com__ >> ~/.ssh/known_hosts`
 
@@ -101,7 +101,7 @@ Undo commits
 
 `git reset --soft HEAD^`
 
-reset to last commit
+Reset to last commit
 
 `git reset --hard HEAD^`
 
@@ -129,17 +129,16 @@ var color = window.getComputedStyle(
 
 ## NPM
 
-### fix paths
+### Fix paths
 
 `cd ~/npm-global/bin`
 
-_check if command your are trying to run exists_
-_add alias in ~/.zshrc | ~/.bashrc whichever terminal you use_
+_Check if command your are trying to run exists_
+_Add alias in ~/.zshrc | ~/.bashrc whichever terminal you use_
 
 `alias ng="~/.npm-global/bin/__placeholder__`
 
-### fix npm links
-
+### Fix npm links
 
 Add to top of ~/.zshrc | ~/.bash_profile
 
@@ -152,7 +151,8 @@ View all global packages
 Shell autocomplete
 
 `npm completion >> ~/.bashrc`
-or
+
+Or
 
 `npm completion >> ~/.zshrc`
 
@@ -169,7 +169,7 @@ Flush dns
 
 `sudo killall -HUP mDNSResponder;say DNS cache has been flushed`
 
-if doesnt work then 
+If that doesnt work then 
 
 `sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache;say MacOS DNS cache has been cleared`
 
@@ -191,16 +191,15 @@ Watching files
 
 `sudo fs_usage | grep my.cnf`
 
-### rm mysql Open the Terminal
+### Obliterate MYSQL from MAC
 
-Use mysqldump to backup your databases
+_Backup your databases_
 
 Check for MySQL processes
 
 `ps -ax | grep mysql`
 
 Stop and kill any MySQL processes
-
 Analyze MySQL on HomeBrew:
 
 `brew remove mysql`
@@ -242,7 +241,7 @@ Check if apache2 active
 
 `sudo netstat -plunt | grep apache2`
 
-### install and fix
+### Install and fix
 
 `brew update`
 
