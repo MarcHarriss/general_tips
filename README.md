@@ -1,10 +1,15 @@
-	# Debian
+# Introduction 	
 
-## monitoring
+Just a curation of commands I keep find myself having to google.
+If your often scouring through documentation or saving snippets, I would recommend using (Dash)[https://kapeli.com/dash].
+
+## Linux
+
+### monitoring
 
 	sudo tail -f /var/log/apache2/access.log
 
-## scp
+### scp
 
 	#copying from remote to local
 	scp -vr user@remote:/path/to/file destination/folder
@@ -14,33 +19,33 @@
 
 	# scp may not work while using zsh, so you may need to switch to bash.
 
-# docker
+## docker
 
-## build image
+### build image
 
 	docker build -t __placeholder__ .
 
-## create background container
+### create background container
 
 	docker run -dp 9200:9200 --name ES elasticsearch
 
 	# the "d" from -dp actually makes it run in the backfound
 
-## remove all images
+### remove all images
 
 	docker rmi -f $(docker images -q)
 
-## run commands inside container
+### run commands inside container
 
 	docker run -it --rm __placeholder__ bash
 
-## stop containers all
+### stop containers all
 
 	docker stop $(docker ps -q)
 
-# Git
+## Git
 
-## branching
+### branching
 
 	git branch iss53
 	git checkout iss53
@@ -53,46 +58,46 @@
 
 	You can have multiple local branches
 
-## changing credentials
+### changing credentials
 
 	git config --global user.name "Marc Harriss"
 
 	git config --global user.email [my@email.com]
 
-## checkout changes
+### checkout changes
 
 	grep -lr '<<<<<<<' . | xargs git checkout --theirs
 
-## copy ssh key
+### copy ssh key
 
 	cat ~/.ssh/id_rsa.pub | pbcopy .
 
-## fix host verify
+### fix host verify
 
 	ssh-keyscan -H __website.com__ >> ~/.ssh/known_hosts
 
-## get config
+### get config
 
 	git config -l
 
-## where to find git conf
+### where to find git conf
 
 	sublime ~/.gitconfig
 
-## rm folder once uploaded
+### rm folder once uploaded
 
 	git rm -r --cached node_modules && touch .gitignore && echo "node_modules/" >> .gitignore
 
-## reverse comm
+### reverse comm
 
 	git reset --soft HEAD^
 
 	// reset to last commit
 	git reset --hard HEAD^
 
-# js 
+## js 
 
-## listen to all event
+### listen to all event
 
 	Object.keys(window).forEach(key => {
 	    if (/^on/.test(key)) {
@@ -102,15 +107,15 @@
 	    }
 	});
 
-## psuedo elem
+### psuedo elem
 
 	var color = window.getComputedStyle(
 		document.querySelector('.element'), ':before'
 	).getPropertyValue('color')
 
-# mac
+## mac
 
-## add app bar space
+### add app bar space
 
 	$ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}’
 
@@ -118,7 +123,7 @@
 
 	repeat for each spacer
 
-## check npm path
+### check npm path
 
 	cd ~/npm-global/bin
 
@@ -128,13 +133,13 @@
 
 	alias ng="~/.npm-global/bin/__placeholder__
 
-## fix npm links
+### fix npm links
 
 	add source /Users/YOUUSERNAME/.bash_profile
 
 	to top of ~/.zshrc
 
-## flush dns
+### flush dns
 
 	sudo killall -HUP mDNSResponder;say DNS cache has been flushed
 
@@ -142,7 +147,7 @@
 
 	sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache;say MacOS DNS cache has been cleared
 
-## rm mysql Open the Terminal
+### rm mysql Open the Terminal
 
 	Use mysqldump to backup your databases
 
@@ -182,7 +187,7 @@
 
 	Try to run mysql, it shouldn't work
 
-## chrome from term
+### chrome from term
 
 	chrome () {
 	    open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "$1"
@@ -192,17 +197,17 @@
 		open -a /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron "$1"
 	}
 
-## watch fs
+### watch fs
 
 	sudo fs_usage | grep my.cnf
 
-# mongo
+## mongo
 
-## check apache2 activ
+### check apache2 activ
 
 	sudo netstat -plunt | grep apache2
 
-## instal and fix
+### instal and fix
 
 	brew update
 
@@ -212,9 +217,9 @@
 
 	sudo chown -R `id -un` /data/db
 
-# npm
+## npm
 
-## shell autocomplete
+### shell autocomplete
 
 	npm completion >> ~/.bashrc
 
@@ -222,13 +227,13 @@
 
 	npm completion >> ~/.zshrc
 
-## view all packages global
+### view all packages global
 
 	npm ls -g --depth 0
 
-# webiste
+## webiste
 
-## add script to head
+### add script to head
 
 	var script = document.createElement('script');
 	script.src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js";
@@ -236,7 +241,7 @@
 	script.crossOrigin = "anonymous";
 	document.head.append(script);
 
-## change icon release note style
+### change icon release note style
 
 	(function() {
 	var b = document.querySelectorAll('i.fa-bug');
@@ -267,7 +272,7 @@
 	})   
 	})('far', 'fa')
 
-## migrating repositories
+### migrating repositories
 
 	git clone --mirror <url_of_old_repo>
 	cd <name_of_old_repo>
