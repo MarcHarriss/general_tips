@@ -306,3 +306,19 @@ Change icons Across Page
 })   
 })('far', 'fa')
 ```
+
+## Ruby
+
+## Managing gems
+
+```Ruby
+gem build <gemname>
+
+gem push <gemname>-<version>
+```
+
+## Ruby gems credentials 
+
+```Ruby
+curl -u mharriss https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+```
