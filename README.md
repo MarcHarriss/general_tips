@@ -1,6 +1,6 @@
 # Introduction 	
 
-Just a curation of commands I keep find myself having to google.
+Just a curation of commands I keep finding myself having to google.
 If your often scouring through documentation or saving snippets, I would recommend using (Dash)[https://kapeli.com/dash].
 
 ## Linux
