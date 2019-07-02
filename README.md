@@ -309,7 +309,7 @@ Change icons Across Page
 
 ## Ruby
 
-## Managing gems
+### Managing gems
 
 ```Ruby
 gem build <gemname>
@@ -317,8 +317,27 @@ gem build <gemname>
 gem push <gemname>-<version>
 ```
 
-## Ruby gems credentials 
+### Ruby gems credentials 
 
 ```Ruby
 curl -u mharriss https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ```
+
+## Python
+
+### Python packages
+
+```python
+# Install latest version of setuptools and wheel
+python3 -m pip install --user --upgrade setuptools wheel
+
+# Run in the directory where setup.py is located 
+python3 setup.py sdist bdist_wheel
+
+# Install Twine to upload the generated packages
+python3 -m pip install --user --upgrade twine
+
+# Upload to test.pypi.org
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+```
+
