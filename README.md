@@ -311,7 +311,7 @@ Change icons Across Page
 
 ### Managing gems
 
-```Ruby
+```shell
 gem build <gemname>
 
 gem push <gemname>-<version>
@@ -319,7 +319,7 @@ gem push <gemname>-<version>
 
 ### Ruby gems credentials 
 
-```Ruby
+```shell
 curl -u mharriss https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ```
 
@@ -327,7 +327,7 @@ curl -u mharriss https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; 
 
 ### Python packages
 
-```python
+```shell
 # Install latest version of setuptools and wheel
 python3 -m pip install --user --upgrade setuptools wheel
 
